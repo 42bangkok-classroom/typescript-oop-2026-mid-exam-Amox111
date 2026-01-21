@@ -4,7 +4,7 @@ interface Person {
   age?: number;
 }
 
-function sortPersons(persons: Person[]): Person[] {
+export function sortPersons(persons: Person[]): Person[] {
 
   let filtered: Person[] = persons.filter(person => persons.firstName == undefined || null);
   let filtered2: Person[] = persons.filter(person => persons.lastName == undefined || null);
