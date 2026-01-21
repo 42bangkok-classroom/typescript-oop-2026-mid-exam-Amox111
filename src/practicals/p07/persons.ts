@@ -4,7 +4,18 @@ interface Person {
   age?: number;
 }
 
-function sortPersons(persons: Person[]): Person[] {}
+function sortPersons(persons: Person[]): Person[] {
+
+  let filtered: Person[] = persons.filter(person => persons.firstName == undefined || null);
+  let filtered2: Person[] = persons.filter(person => persons.lastName == undefined || null);
+  let filtered3: Person[] = persons.filter(person => persons.age == null);
+  let filtered4: Person[] = persons.filter(person => persons.age < 0);
+  let filtered5: Person[] = persons.filter(person => persons.age > 100);
+  
+  filtered5.sort((a, b) => a.age - b.age);
+
+  return persons;
+}
 
 
 const persons: Person[] = [
@@ -16,3 +27,7 @@ const persons: Person[] = [
   { firstName: "Jane", lastName: "Smith", age: -5 },
   { lastName: "NoName", age: 40 }
 ];
+
+sortPersons(persons);
+
+// **
